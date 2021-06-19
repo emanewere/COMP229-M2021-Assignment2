@@ -21,10 +21,23 @@
             </thead>
             <tbody>
                 
-              
+                contactL.sort(
+                  function(a, b)<% { %>
+                var nameA = a.FullName.toUpperCase(); // ignore upper and lowercase
+              var nameB = b.FullName.toUpperCase(); // ignore upper and lowercase
+                if (nameA < nameB) {
+                return -1;
+                }
+           if (nameA > nameB) {
+                return 1;
+          }
+
+            // names must be equal
+                  return 0;
+                <%}%>);
 
              <!-- Repeatable Row Template -->   
-              
+            
              <% for(let count = 0; count < contactL.length; count++) { %>
               
                 <tr>

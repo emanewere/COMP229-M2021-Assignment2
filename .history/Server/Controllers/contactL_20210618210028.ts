@@ -12,7 +12,7 @@ import{UserDisplayName }from '../Util';
 export function DisplaycontactLListPage(req: Request, res: Response, next: NextFunction): void
 {
     // db.contactL.find()
-    contactL.find({}, null, {sort: {FullName: 1}},(err, contactLCollection) =>
+    contactL.find((err, contactLCollection) =>
     {
         if(err)
         {
@@ -21,7 +21,7 @@ export function DisplaycontactLListPage(req: Request, res: Response, next: NextF
         }
         
         res.render('index', { title: 'Business Contact List', page: 'contact-list', contactL: contactLCollection, displayName: UserDisplayName(req)  });
-    });
+    }).sort({ field : "asc"}).exec(function(err, model){ model.FullName });;
 }
 
 // Display (E)dit page

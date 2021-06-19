@@ -7,7 +7,7 @@ exports.ProcessDeletePage = exports.ProcessAddPage = exports.ProcessEditPage = e
 const clothing_1 = __importDefault(require("../Models/clothing"));
 const Util_1 = require("../Util");
 function DisplaycontactLListPage(req, res, next) {
-    clothing_1.default.find((err, contactLCollection) => {
+    clothing_1.default.find({}, null, { sort: { FullName: 1 } }, (err, contactLCollection) => {
         if (err) {
             console.error(err);
             res.end(err);

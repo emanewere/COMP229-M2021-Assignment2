@@ -21,10 +21,10 @@
             </thead>
             <tbody>
                 
-              
+                contactL.sort();
 
              <!-- Repeatable Row Template -->   
-              
+              <%=: contactL | sort_by:'FullName'  %>
              <% for(let count = 0; count < contactL.length; count++) { %>
               
                 <tr>

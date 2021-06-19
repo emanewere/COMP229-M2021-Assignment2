@@ -21,7 +21,20 @@
             </thead>
             <tbody>
                 
+             <% for(let count = 0; count < contactL.length-1; count++) { %>
+                      <% for(let count2 = 0; count2 < contactL.length-count-1; count2++) { %>
               
+                            <% if(contactL[count2]>contactL[count2+1]) { %>
+              
+                              let temp = contactL[count2];
+                              contactL[count2] =contactL[count2+1];
+                              contactL[count2+1] = temp; 
+
+                       <% } %>
+
+                       <% } %>  
+
+              <% } %>  
 
              <!-- Repeatable Row Template -->   
               

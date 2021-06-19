@@ -12,7 +12,7 @@ import{UserDisplayName }from '../Util';
 export function DisplaycontactLListPage(req: Request, res: Response, next: NextFunction): void
 {
     // db.contactL.find()
-    contactL.find({}, null, {sort: {FullName: 1}},(err, contactLCollection) =>
+    contactL.find((err, contactLCollection) =>
     {
         if(err)
         {
