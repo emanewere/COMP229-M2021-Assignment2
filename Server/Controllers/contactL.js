@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessDeletePage = exports.ProcessAddPage = exports.ProcessEditPage = exports.DisplayAddPage = exports.DisplayEditPage = exports.DisplaycontactLListPage = void 0;
-const clothing_1 = __importDefault(require("../Models/clothing"));
+const contactL_1 = __importDefault(require("../Models/contactL"));
 const Util_1 = require("../Util");
 function DisplaycontactLListPage(req, res, next) {
-    clothing_1.default.find({}, null, { sort: { FullName: 1 } }, (err, contactLCollection) => {
+    contactL_1.default.find({}, null, { sort: { FullName: 1 } }, (err, contactLCollection) => {
         if (err) {
             console.error(err);
             res.end(err);
@@ -18,7 +18,7 @@ function DisplaycontactLListPage(req, res, next) {
 exports.DisplaycontactLListPage = DisplaycontactLListPage;
 function DisplayEditPage(req, res, next) {
     let id = req.params.id;
-    clothing_1.default.findById(id, {}, {}, (err, contactLItemToEdit) => {
+    contactL_1.default.findById(id, {}, {}, (err, contactLItemToEdit) => {
         if (err) {
             console.error(err);
             res.end(err);
@@ -33,13 +33,13 @@ function DisplayAddPage(req, res, next) {
 exports.DisplayAddPage = DisplayAddPage;
 function ProcessEditPage(req, res, next) {
     let id = req.params.id;
-    let updatedcontactLItem = new clothing_1.default({
+    let updatedcontactLItem = new contactL_1.default({
         "_id": id,
         "FullName": req.body.FullName,
         "EmailAddress": req.body.EmailAddress,
         "ContactNumber": req.body.ContactNumber,
     });
-    clothing_1.default.updateOne({ _id: id }, updatedcontactLItem, {}, (err) => {
+    contactL_1.default.updateOne({ _id: id }, updatedcontactLItem, {}, (err) => {
         if (err) {
             console.error(err);
             res.end(err);
@@ -49,12 +49,12 @@ function ProcessEditPage(req, res, next) {
 }
 exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
-    let newContact = new clothing_1.default({
+    let newContact = new contactL_1.default({
         "FullName": req.body.FullName,
         "EmailAddress": req.body.EmailAddress,
         "ContactNumber": req.body.ContactNumber,
     });
-    clothing_1.default.create(newContact, (err) => {
+    contactL_1.default.create(newContact, (err) => {
         if (err) {
             console.error(err);
             res.end(err);
@@ -65,7 +65,7 @@ function ProcessAddPage(req, res, next) {
 exports.ProcessAddPage = ProcessAddPage;
 function ProcessDeletePage(req, res, next) {
     let id = req.params.id;
-    clothing_1.default.remove({ _id: id }, (err) => {
+    contactL_1.default.remove({ _id: id }, (err) => {
         if (err) {
             console.error(err);
             res.end(err);
