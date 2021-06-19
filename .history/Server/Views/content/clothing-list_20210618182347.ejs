@@ -9,12 +9,10 @@
             <thead class="table-dark">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Brand</th>
-                <th scope="col">Category</th>
-                <th scope="col">Colour</th>
-                <th scope="col">Size</th>
-                <th scope="col">Price</th>
+                <th scope="col">FullName</th>
+                <th scope="col">EmailAddress</th>
+                <th scope="col">ContactNumber</th>
+                
                 <% if(displayName){%>
                 <th></th>
                 <th></th>
@@ -29,12 +27,10 @@
               
                 <tr>
                     <th scope="row"><%= count + 1 %></th>
-                    <td><%= clothing[count].name %></td>
-                    <td><%= clothing[count].brand %></td>
-                    <td><%= clothing[count].category %></td>
-                    <td><%= clothing[count].colour %></td>
-                    <td><%= clothing[count].size %></td>
-                    <td><%= clothing[count].price %></td>
+                    <td><%= clothing[count].FullName %></td>
+                    <td><%= clothing[count].EmailAddress %></td>
+                    <td><%= clothing[count].ContactNumber %></td>
+                    
                     <% if(displayName){%>
                     <td class="text-center"><a href="/clothing-list/edit/<%= clothing[count]._id %>" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</a></td>
                 <td class="text-center"><a href="/clothing-list/delete/<%= clothing[count]._id %>" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt fa-sm"></i> Delete</a></td>

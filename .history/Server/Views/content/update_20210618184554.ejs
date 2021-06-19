@@ -1,0 +1,35 @@
+<div class="row justify-content-lg-center g-3">
+    <h1><%= title %> Clothing Item</h1>
+
+    <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-name">FullName</span>
+            <input type="text" class="form-control" placeholder="Enter Full Name" aria-label="Clothing Name" aria-describedby="Clothing Name"
+            name="name" value="<%= contact_list.FullName %>" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-name">Email Address</span>
+            <input type="text" class="form-control" placeholder="Enter Email Address" aria-label="Clothing Brand" aria-describedby="Clothing Brand"
+            name="brand" value="<%= contact_list.EmailAddress %>" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-name">Contact Number</span>
+            <input type="text" class="form-control" placeholder="Enter Contact Number" aria-label="Clothing Category" aria-describedby="Clothing Category"
+            name="category" value="<%= contact_list.ContactNumber %>" required>
+        </div>
+
+        
+            
+        
+            <% if(title == "Edit") { %>
+                <button type="submit" id="editButton" class="btn btn-primary"><i class="fas fa-edit fa-lg"></i> Edit</button>
+            <% } else { %>
+                <button type="submit" id="addButton" class="btn btn-primary"><i class="fas fa-plus-circle fa-lg"></i> Add</button>
+            <% } %>  
+            
+            <a href="/clothing-list" id="cancelButton" type="button" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</a>
+        </div>
+    </form>
+</div>

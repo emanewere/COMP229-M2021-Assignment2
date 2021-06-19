@@ -12,7 +12,7 @@ function DisplayClothingListPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Clothing List', page: 'clothing-list', clothing: clothingCollection, displayName: Util_1.UserDisplayName(req) });
+        res.render('index', { title: 'Business Contact List', page: 'contact-list', clothing: clothingCollection, displayName: Util_1.UserDisplayName(req) });
     });
 }
 exports.DisplayClothingListPage = DisplayClothingListPage;
@@ -35,37 +35,31 @@ function ProcessEditPage(req, res, next) {
     let id = req.params.id;
     let updatedClothingItem = new clothing_1.default({
         "_id": id,
-        "name": req.body.name,
-        "brand": req.body.brand,
-        "category": req.body.category,
-        "colour": req.body.colour,
-        "size": req.body.size,
-        "price": req.body.price
+        "FullName": req.body.FullName,
+        "EmailAddress": req.body.EmailAddress,
+        "ContactNumber": req.body.ContactNumber,
     });
     clothing_1.default.updateOne({ _id: id }, updatedClothingItem, {}, (err) => {
         if (err) {
             console.error(err);
             res.end(err);
         }
-        res.redirect('/clothing-list');
+        res.redirect('/contact-list');
     });
 }
 exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
     let newContact = new clothing_1.default({
-        "name": req.body.name,
-        "brand": req.body.brand,
-        "category": req.body.category,
-        "colour": req.body.colour,
-        "size": req.body.size,
-        "price": req.body.price
+        "FullName": req.body.FullName,
+        "EmailAddress": req.body.EmailAddress,
+        "ContactNumber": req.body.ContactNumber,
     });
     clothing_1.default.create(newContact, (err) => {
         if (err) {
             console.error(err);
             res.end(err);
         }
-        res.redirect('/clothing-list');
+        res.redirect('/contact-list');
     });
 }
 exports.ProcessAddPage = ProcessAddPage;
@@ -76,7 +70,7 @@ function ProcessDeletePage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.redirect('/clothing-list');
+        res.redirect('/contact-list');
     });
 }
 exports.ProcessDeletePage = ProcessDeletePage;

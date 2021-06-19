@@ -20,7 +20,7 @@ export function DisplayClothingListPage(req: Request, res: Response, next: NextF
             res.end(err);
         }
         
-        res.render('index', { title: 'Clothing List', page: 'clothing-list', clothing: clothingCollection, displayName: UserDisplayName(req)  });
+        res.render('index', { title: 'Business Contact List', page: 'contact-list', clothing: clothingCollection, displayName: UserDisplayName(req)  });
     });
 }
 
@@ -64,12 +64,9 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
     let updatedClothingItem = new Clothing
     ({
       "_id": id,
-      "name": req.body.name,
-      "brand": req.body.brand,
-      "category": req.body.category,
-      "colour": req.body.colour,
-      "size": req.body.size,
-      "price": req.body.price
+      "FullName": req.body.FullName,
+    "EmailAddress": req.body.EmailAddress,
+    "ContactNumber": req.body.ContactNumber,
     });
   
     // find the clothing item via db.clothing.update({"_id":id}) and then update
@@ -80,7 +77,7 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
         res.end(err);
       }
   
-      res.redirect('/clothing-list');
+      res.redirect('/contact-list');
     });
 }
 
@@ -90,12 +87,11 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
   // instantiate a new Clothing
   let newContact = new Clothing
   ({
-    "name": req.body.name,
-    "brand": req.body.brand,
-    "category": req.body.category,
-    "colour": req.body.colour,
-    "size": req.body.size,
-    "price": req.body.price
+    
+    "FullName": req.body.FullName,
+    "EmailAddress": req.body.EmailAddress,
+    "ContactNumber": req.body.ContactNumber,
+    
   });
 
   // db.clothing.insert({clothing data is here...})
@@ -106,7 +102,7 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
       res.end(err);
     }
 
-    res.redirect('/clothing-list');
+    res.redirect('/contact-list');
   });
 }
 
@@ -123,6 +119,6 @@ export function ProcessDeletePage(req: Request, res: Response, next: NextFunctio
       res.end(err);
     }
 
-    res.redirect('/clothing-list');
+    res.redirect('/contact-list');
   });
 }

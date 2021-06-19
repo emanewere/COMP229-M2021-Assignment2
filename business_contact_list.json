@@ -1,0 +1,17 @@
+{
+    "business_contact_list":
+    [
+        {
+            "FullName": "John Doe",
+            "EmailAddress": "johndoe@example.com",
+            "ContactNumber": 2042072189
+        },
+        {
+            "FullName": "James Elliot",
+            "EmailAddress": "jamesElliot@example.com",
+            "ContactNumber": 2042082189
+        }
+    ]
+}
+
+

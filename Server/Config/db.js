@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Secret = exports.HostName = exports.RemoteURI = exports.LocalURI = void 0;
-exports.LocalURI = "mongodb://localhost/clothing_store";
+exports.LocalURI = "mongodb://localhost/contact";
 exports.RemoteURI = "mongodb+srv://Admin:bAKbkrRaPiu4yxFn@clustercomp229.xzazy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 exports.HostName = "RemoteHost";
 exports.Secret = "someSecret";
