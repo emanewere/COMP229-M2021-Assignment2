@@ -1,3 +1,11 @@
+
+/**
+ * Module dependencies.
+ *  File name: app.ts, 
+    Student's name: Ofovwe Ewere
+    Student's id: 301188196
+    Date: June 14, 2021
+ */
 import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
@@ -17,6 +25,7 @@ import cors from 'cors';
 let localStrategy = passportLocal.Strategy; //alias
 import User from '../Models/user';
 
+
 //Module for auth messaging and error management
 import flash from 'connect-flash';
 
@@ -26,11 +35,11 @@ import contactLRouter from '../Routes/contactL';
 
 // Express Web App Configuration
 const app = express();
-export default app; // exports app as the default Object for this module
+export default app; // exports app as the default Object for this modules
 
 // DB Configuration
 import * as DBConfig from './db';
-mongoose.connect(DBConfig.LocalURI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DBConfig.RemoteURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection; // alias for the mongoose connection
 db.on("error", function()

@@ -35,7 +35,7 @@ import contactLRouter from '../Routes/contactL';
 
 // Express Web App Configuration
 const app = express();
-export default app; // exports app as the default Object for this module
+export default app; // exports app as the default Object for this modules
 
 // DB Configuration
 import * as DBConfig from './db';
